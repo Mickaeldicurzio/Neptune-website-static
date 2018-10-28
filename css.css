@@ -85,6 +85,17 @@ body {
 
 /*social bar and row*/
 
+.link p {
+    color: rgba(255,255,255,0.9);
+    position: relative;
+    left: 0;
+    font-weight: 100;
+    font-size: 11px;
+    cursor: pointer;
+    text-shadow: 0 1px 10px rgba(255, 255, 255, 0.4);
+    font-family: Moon-bold, serif;
+}
+
 .social-row--inner .arrow img {
     width: 40px;
 }
@@ -92,17 +103,18 @@ body {
 .social-icon {
     margin-right: 25px;
     margin-top: 15px;
+    display: flex;
 }
 
 .social-icon img {
     width: 22px;
-    margin-right: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
     opacity: 0.6;
 }
 
 .social-icon img:hover {
-    width: 22px;
-    margin-right: 30px;
     opacity: 0.8;
     cursor: pointer;
 
@@ -131,13 +143,23 @@ body {
     justify-content: space-between;
 }
 
-.arrow {
+.arrow.hidden,
+.link p.hidden
+{
+    opacity: 0;
+    position: relative;
+    top: -50px;
+    -webkit-animation: hide 0.5s;
+}
+
+.arrow,
+.link p {
     opacity: 0;
     position: relative;
     top: -50px;
 }
 
-.arrow.revealed {
+.arrow.revealed, .link p.revealed {
     opacity: 1;
     top: inherit;
     -webkit-animation: framed 1s;
@@ -184,6 +206,18 @@ body {
         box-shadow: black 2px 2px 7px 7px;
     }
 }
+
+@-webkit-keyframes hide {
+    0% {
+        top: 0;
+        opacity: 0.9;
+    }
+    100% {
+        top: -50px;
+        opacity: 0;
+    }
+}
+
 
 @-webkit-keyframes framed{
     0% {

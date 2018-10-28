@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -17,7 +16,8 @@
         <div class="bar3"></div>
     </div>
 
-    <div class="jumbotron-container" data-tilt data-tilt-axis="x" data-tilt-perspective="1750" data-tilt-max-glare=" data-tilt-transition="true">
+    <div class="jumbotron-container" data-tilt data-tilt-axis="x" data-tilt-perspective="1750"
+         data-tilt-transition="true">
         <div class="sun">
             <div class="moon"></div>
         </div>
@@ -34,11 +34,38 @@
                 <img src="images/icons/down-arrow.svg" alt="down-arrow">
             </div>
             <div class="social-icon">
-                <img src="images/icons/soundcloud.svg" alt="soundcloud">
-                <img src="images/icons/facebook-letter-logo.svg" alt="facebook">
-                <img src="images/icons/icon.svg" alt="instagram">
-                <img src="images/icons/twitter-logo-silhouette.svg" alt="twitter">
-                <img src="images/icons/linkedin-sign.svg" alt="linkedin">
+
+                <div class="link">
+                    <p class="brand">Soudcloud</p>
+                    <a href="https://soundcloud.com/neptuneprog" target="_blank">
+                        <img src="images/icons/soundcloud.svg" alt="soundcloud">
+                    </a>
+                </div>
+                <div class="link">
+                    <p class="brand">Facebook</p>
+                    <a href="https://www.facebook.com/mickael.dicurzio" target="_blank">
+                        <img src="images/icons/facebook-letter-logo.svg" alt="facebook">
+                    </a>
+                </div>
+                <div class="link">
+                    <p class="brand">Instagram</p>
+                    <a href="https://www.instagram.com/mickael.dicurzio" target="_blank">
+                        <img src="images/icons/icon.svg" alt="instagram">
+                    </a>
+                </div>
+                <div class="link">
+                    <p class="brand">Twitter</p>
+                    <a href="https://twitter.com/MickaelDicurzio" target="_blank">
+                        <img src="images/icons/twitter-logo-silhouette.svg" alt="twitter">
+                    </a>
+                </div>
+                <div class="link">
+                    <p class="brand">Linkedin</p>
+                    <a href="https://www.linkedin.com/in/micka%C3%ABl-di-curzio-92997a131/" target="_blank">
+                        <img src="images/icons/linkedin-sign.svg" alt="linkedin">
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -54,18 +81,38 @@
         x.classList.toggle("change");
     }
 
-   jQuery('.sun').mouseenter (function () {
-        jQuery('.arrow').addClass('revealed');
+    SUN = jQuery('.sun');
+    NAME = jQuery('.name');
+    ARROW = jQuery('.arrow');
+    LINK = jQuery('.link img');
+
+    SUN.mouseenter(function () {
+        ARROW.removeClass('hidden');
+        ARROW.addClass('revealed');
     });
-   jQuery('.sun').mouseleave (function () {
-        jQuery('.arrow').removeClass('revealed');
+    SUN.mouseleave(function () {
+        ARROW.removeClass('revealed');
+        ARROW.addClass('hidden');
     });
-   jQuery('.name').mouseenter (function () {
-        jQuery('.arrow').addClass('revealed');
+    NAME.mouseenter(function () {
+        ARROW.removeClass('hidden');
+        ARROW.addClass('revealed');
     });
-   jQuery('.name').mouseleave (function () {
-        jQuery('.arrow').removeClass('revealed');
+    NAME.mouseleave(function () {
+        ARROW.removeClass('revealed');
+        ARROW.addClass('hidden');
     });
+
+    LINK.mouseenter(function (index) {
+        jQuery(index.target).parent().siblings('.brand').addClass('revealed');
+        jQuery(index.target).parent().siblings('.brand').removeClass('hidden');
+    });
+    LINK.mouseleave(function (index) {
+
+        jQuery(index.target).parent().siblings('.brand').addClass('hidden');
+        jQuery(index.target).parent().siblings('.brand').removeClass('revealed');
+    })
+
 
 </script>
 
