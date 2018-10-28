@@ -1,0 +1,214 @@
+body {
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+/* Font-Face */
+
+@font-face {
+    font-family: Moon-bold;
+    src: url("fonts/Moon Bold.otf");
+}
+
+@font-face {
+    font-family: Moon-light;
+    src: url("fonts/Moon Light.otf");
+}
+
+/*moon animated*/
+
+.sun {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    border: 0px solid black;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 6px #fff;
+}
+
+.moon {
+    background: black;
+    position: absolute;
+    border-radius: 47.75%;
+    width: 500px;
+    left: 15px;
+    top: 2.25px;
+    cursor: pointer;
+    opacity: 1;
+    height: 500px;
+    box-shadow: black 2px 2px 7px 7px;
+    -webkit-animation: expanded 2s;
+
+}
+
+/*// jumbotron*/
+
+.jumbotron {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbotron-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/*// name*/
+
+.name {
+    font-family: Moon-bold, serif;
+    position: absolute;
+    cursor: pointer;
+    margin-left: 5%;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 100;
+    text-shadow: 0 1px 10px rgba(255, 255, 255, 0.4);
+    -webkit-animation: lighten 5s;
+    transition: all 0.3s ease;
+}
+
+.name:hover {
+    text-shadow: 0 1px 12px rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+/*social bar and row*/
+
+.social-row--inner .arrow img {
+    width: 40px;
+}
+
+.social-icon {
+    margin-right: 25px;
+    margin-top: 15px;
+}
+
+.social-icon img {
+    width: 22px;
+    margin-right: 30px;
+    opacity: 0.6;
+}
+
+.social-icon img:hover {
+    width: 22px;
+    margin-right: 30px;
+    opacity: 0.8;
+    cursor: pointer;
+
+}
+
+.named {
+    top: 50px;
+    left: 150px;
+    position: relative;
+    font-size: 12px;
+}
+
+.social-row {
+    bottom: 50px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.social-row--inner {
+    width: 50%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    opacity: 0;
+    position: relative;
+    top: -50px;
+}
+
+.arrow.revealed {
+    opacity: 1;
+    top: inherit;
+    -webkit-animation: framed 1s;
+}
+
+/*// burger menu*/
+
+.burger-menu--icon {
+    width: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 999;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgba(255,255,255,0.8);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* Keyframes */
+
+@-webkit-keyframes expanded {
+    0% {
+        box-shadow: black -100px 2px 7px 7px;
+    }
+    100% {
+        box-shadow: black 2px 2px 7px 7px;
+    }
+}
+
+@-webkit-keyframes framed{
+    0% {
+        top: -50px;
+        opacity: 0;
+    }
+    70% {
+        top: 0;
+        opacity: 0.7;
+    }
+    100% {
+        top: 0;
+        opacity: 0.9;
+    }
+}
+
+
+@-webkit-keyframes lighten {
+    0% {
+        color: rgba(255, 255, 255, 0.0);
+    }
+    70% {
+        color: rgba(255, 255, 255, 1);
+    }
+    100% {
+        color: rgba(255, 255, 255, 0.6);
+    }
+}

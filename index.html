@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css.css">
+
+</head>
+
+<body>
+
+<div class="jumbotron">
+
+    <div class="burger-menu--icon" onclick="translateBurger(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <div class="jumbotron-container" data-tilt data-tilt-axis="x" data-tilt-perspective="1750" data-tilt-max-glare=" data-tilt-transition="true">
+        <div class="sun">
+            <div class="moon"></div>
+        </div>
+
+
+        <div class="name">
+            <h1 style="transform: translateZ(20px)">NEPTUNE</h1>
+        </div>
+
+    </div>
+    <div class="social-row">
+        <div class="social-row--inner">
+            <div class="arrow">
+                <img src="images/icons/down-arrow.svg" alt="down-arrow">
+            </div>
+            <div class="social-icon">
+                <img src="images/icons/soundcloud.svg" alt="soundcloud">
+                <img src="images/icons/facebook-letter-logo.svg" alt="facebook">
+                <img src="images/icons/icon.svg" alt="instagram">
+                <img src="images/icons/twitter-logo-silhouette.svg" alt="twitter">
+                <img src="images/icons/linkedin-sign.svg" alt="linkedin">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/tilt.js-master/src/tilt.jquery.js"></script>
+
+<script>
+
+
+    function translateBurger(x) {
+        x.classList.toggle("change");
+    }
+
+   jQuery('.sun').mouseenter (function () {
+        jQuery('.arrow').addClass('revealed');
+    });
+   jQuery('.sun').mouseleave (function () {
+        jQuery('.arrow').removeClass('revealed');
+    });
+   jQuery('.name').mouseenter (function () {
+        jQuery('.arrow').addClass('revealed');
+    });
+   jQuery('.name').mouseleave (function () {
+        jQuery('.arrow').removeClass('revealed');
+    });
+
+</script>
+
+</body>
+
+
+</html>
